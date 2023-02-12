@@ -1,12 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "build",
     "rootDir": ".",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es2017", "esnext", "dom"],
+    "lib": [
+      "es2017",
+      "esnext",
+      "dom"
+    ],
     "jsx": "react",
     "experimentalDecorators": true,
     "noImplicitReturns": false,
@@ -27,7 +31,5 @@
     "./src/**/*.tsx",
     "./src/**/*.d.ts",
     "./src/**/*.d.tsx",
-    "node_modules/@nab/nab-x-react/dist/**/*.d.ts",
-    "../../node_modules/@nab/nab-x-react/dist/**/*.d.ts"
   ]
 }
