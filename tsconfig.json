@@ -1,26 +1,33 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src",
+    "outDir": "build",
+    "rootDir": ".",
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "target": "es5",
+    "lib": ["es2017", "esnext", "dom"],
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "suppressImplicitAnyIndexErrors": true,
     "isolatedModules": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "downlevelIteration": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "traceResolution": false
   },
   "include": [
-    "src"
+    "./src/*.ts",
+    "./src/*.tsx",
+    "./src/*.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.d.ts",
+    "./src/**/*.d.tsx",
+    "node_modules/@nab/nab-x-react/dist/**/*.d.ts",
+    "../../node_modules/@nab/nab-x-react/dist/**/*.d.ts"
   ]
 }
