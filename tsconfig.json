@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "build",
@@ -18,9 +17,12 @@
     "suppressImplicitAnyIndexErrors": true,
     "isolatedModules": true,
     "noEmitOnError": true,
+    "allowSyntheticDefaultImports": true,
     "removeComments": true,
     "downlevelIteration": true,
     "noEmit": true,
+    "allowJs": true,
+    "moduleResolution": "node",
     "traceResolution": false
   },
   "include": [
@@ -31,5 +33,8 @@
     "./src/**/*.tsx",
     "./src/**/*.d.ts",
     "./src/**/*.d.tsx",
+  ],
+  "exclude": [
+    "./node_modules/**/*"
   ]
 }

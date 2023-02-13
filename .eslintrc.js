@@ -1,7 +1,8 @@
 module.exports = {
     'env': {
         'browser': true,
-        'es2021': true
+        'es2021': true,
+        'node':true
     },
     'extends': [
         'eslint:recommended',
@@ -26,7 +27,6 @@ module.exports = {
             '@typescript-eslint/no-unused-vars': 'error',
             'react/react-in-jsx-scope': 'off',
             'camelcase': 'error',
-            'spaced-comment': 'error',
             'no-duplicate-imports': 'error',
             'no-unused-vars': 'off',
             'no-smart-quotes/no-smart-quotes': 'error',
