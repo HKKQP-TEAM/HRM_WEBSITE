@@ -5,12 +5,8 @@
     "rootDir": ".",
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es2017",
-      "esnext",
-      "dom"
-    ],
-    "jsx": "react",
+    "lib": ["es2017", "esnext", "dom"],
+    "jsx": "react-jsx",
     "experimentalDecorators": true,
     "noImplicitReturns": false,
     "noImplicitThis": false,
@@ -32,9 +28,7 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./src/**/*.d.ts",
-    "./src/**/*.d.tsx",
+    "./src/**/*.d.tsx"
   ],
-  "exclude": [
-    "./node_modules/**/*"
-  ]
+  "exclude": ["./node_modules/**/*"]
 }
