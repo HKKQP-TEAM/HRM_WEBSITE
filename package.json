@@ -23,10 +23,10 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "yarn lint:format && yarn lint:fix ",
@@ -61,6 +61,8 @@
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "babel-loader": "^9.1.2",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "customize-cra": "^1.0.0",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
@@ -72,6 +74,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
+    "react-app-rewired": "^2.2.1",
     "typescript": "^4.9.5",
     "web-vitals": "^3.1.1"
   },

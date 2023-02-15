@@ -12,7 +12,7 @@ import {
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import Iconify from '../../../components/iconify';
+import Iconify from '~/components/iconify';
 
 export default function SignInForm() {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);

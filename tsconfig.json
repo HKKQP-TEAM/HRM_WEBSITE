@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "outDir": "build",
     "rootDir": ".",
     "module": "esnext",
@@ -19,7 +19,10 @@
     "noEmit": true,
     "allowJs": true,
     "moduleResolution": "node",
-    "traceResolution": false
+    "traceResolution": false,
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": [
     "./src/*.ts",
