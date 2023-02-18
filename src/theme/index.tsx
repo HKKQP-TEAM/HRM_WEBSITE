@@ -1,6 +1,6 @@
 import { CssBaseline } from '@mui/material';
 import { StyledEngineProvider, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
-import * as React from 'react';
+import React from 'react';
 
 import theme from './customTheme';
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 
@@ -104,43 +103,6 @@ declare module '@mui/material/styles' {
         focusOpacity: number;
         activatedOpacity: number;
       };
-    };
-    customShadows: {
-      z1: string;
-      z8: string;
-      z12: string;
-      z16: string;
-      z20: string;
-      z24: string;
-      primary: string;
-      info: string;
-      secondary: string;
-      success: string;
-      warning: string;
-      error: string;
-      card: string;
-      dialog: string;
-      dropdown: string;
-    };
-  }
-
-  interface ThemeOptions {
-    customShadows: {
-      z1: string;
-      z8: string;
-      z12: string;
-      z16: string;
-      z20: string;
-      z24: string;
-      primary: string;
-      info: string;
-      secondary: string;
-      success: string;
-      warning: string;
-      error: string;
-      card: string;
-      dialog: string;
-      dropdown: string;
     };
   }
 }

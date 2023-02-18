@@ -3,10 +3,10 @@ import { alpha } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 import breakpoints from './breakpoints';
+import ComponentsOverrides from './overrides';
 import palette from './palette';
 
 const COLOR = '#919EAB';
-const transparent = alpha(COLOR, 0.16);
 const transparent1 = alpha(COLOR, 0.2);
 const transparent2 = alpha(COLOR, 0.14);
 const transparent3 = alpha(COLOR, 0.12);
@@ -144,24 +144,10 @@ const theme = createTheme({
     },
   },
   breakpoints,
-  customShadows: {
-    z1: `0 1px 2px 0 ${transparent}`,
-    z8: `0 8px 16px 0 ${transparent}`,
-    z12: `0 12px 24px -4px ${transparent}`,
-    z16: `0 16px 32px -4px ${transparent}`,
-    z20: `0 20px 40px -4px ${transparent}`,
-    z24: `0 24px 48px 0 ${transparent}`,
-    primary: `0 8px 16px 0 ${alpha(palette.primary.main, 0.24)}`,
-    info: `0 8px 16px 0 ${alpha(palette.info.main, 0.24)}`,
-    secondary: `0 8px 16px 0 ${alpha(palette.secondary.main, 0.24)}`,
-    success: `0 8px 16px 0 ${alpha(palette.success.main, 0.24)}`,
-    warning: `0 8px 16px 0 ${alpha(palette.warning.main, 0.24)}`,
-    error: `0 8px 16px 0 ${alpha(palette.error.main, 0.24)}`,
-    card: `0 0 2px 0 ${alpha(COLOR, 0.2)}, 0 12px 24px -4px ${alpha(COLOR, 0.12)}`,
-    dialog: `-40px 40px 80px -8px ${alpha(palette.common.black, 0.24)}`,
-    dropdown: `0 0 2px 0 ${alpha(COLOR, 0.24)}, -20px 20px 40px -4px ${alpha(COLOR, 0.24)}`,
-  },
+
   shape: { borderRadius: 8 },
 });
+
+theme.components = ComponentsOverrides(theme);
 
 export default theme;

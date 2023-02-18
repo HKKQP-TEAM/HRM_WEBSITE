@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { alpha, darken, lighten } from '@mui/material';
 
 function createGradient(color1: string, color2: string) {
@@ -6,53 +5,53 @@ function createGradient(color1: string, color2: string) {
 }
 
 const themeColors = {
-  primary: '#304ffe',
-  secondary: '#2e7d32',
-  info: '#2979ff',
-  success: '#54D62C',
-  warning: '#ff6d00',
-  error: '#d50000',
+  primary: '#15A7F9',
+  secondary: '#85CAD9',
+  info: '#2979ff', //
+  success: '#49BF78',
+  warning: '#EDA314',
+  error: '#CF5E5E',
 };
 
 const PRIMARY = {
-  light: lighten(themeColors.primary, 0.3),
+  light: lighten(themeColors.primary, 0.1),
   main: themeColors.primary,
-  dark: darken(themeColors.primary, 0.3),
+  dark: darken(themeColors.primary, 0.1),
   contrastText: '#fff',
 };
 
 const SECONDARY = {
-  light: lighten(themeColors.secondary, 0.3),
+  light: lighten(themeColors.secondary, 0.1),
   main: themeColors.secondary,
-  dark: darken(themeColors.secondary, 0.3),
+  dark: darken(themeColors.secondary, 0.1),
   contrastText: '#fff',
 };
 
 const INFO = {
-  light: lighten(themeColors.info, 0.3),
+  light: lighten(themeColors.info, 0.1),
   main: themeColors.info,
-  dark: darken(themeColors.info, 0.3),
-  contrastText: '#161C24',
+  dark: darken(themeColors.info, 0.1),
+  contrastText: '#000000',
 };
 
 const SUCCESS = {
-  light: lighten(themeColors.success, 0.3),
+  light: lighten(themeColors.success, 0.1),
   main: themeColors.success,
-  dark: darken(themeColors.success, 0.3),
-  contrastText: '#161C24',
+  dark: darken(themeColors.success, 0.1),
+  contrastText: '#000000',
 };
 
 const WARNING = {
-  light: lighten(themeColors.warning, 0.3),
+  light: lighten(themeColors.warning, 0.1),
   main: themeColors.warning,
-  dark: darken(themeColors.warning, 0.3),
-  contrastText: '#161C24',
+  dark: darken(themeColors.warning, 0.1),
+  contrastText: '#000000',
 };
 
 const ERROR = {
-  light: lighten(themeColors.error, 0.3),
+  light: lighten(themeColors.error, 0.1),
   main: themeColors.error,
-  dark: darken(themeColors.error, 0.3),
+  dark: darken(themeColors.error, 0.1),
   contrastText: '#fff',
 };
 
@@ -66,7 +65,7 @@ const GREY = {
   600: '#637381',
   700: '#454F5B',
   800: '#212B36',
-  900: '#161C24',
+  900: '#000000',
   500_8: alpha('#919EAB', 0.08),
   500_12: alpha('#919EAB', 0.12),
   500_16: alpha('#919EAB', 0.16),
