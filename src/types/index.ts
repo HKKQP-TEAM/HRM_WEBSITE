@@ -1,2 +1,2 @@
-// utils
+// types
 export {};
