@@ -1,16 +1,21 @@
-import * as React from 'react';
+import './locales/i18n';
+
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 
 import App from './App';
 import Loading from './components/loading';
+import { LocalesProvider } from './contexts';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <React.Suspense fallback={<Loading />}>
-        <App />
+        <LocalesProvider>
+          <App />
+        </LocalesProvider>
       </React.Suspense>
     </HelmetProvider>
   </React.StrictMode>,

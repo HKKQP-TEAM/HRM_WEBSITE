@@ -1,0 +1,16 @@
+{
+  "appName": "ReactJS Boilerplate",
+  "Language": "Language",
+  "English": "English",
+  "Japanese": "Japanese",
+  "Homepage": "ホームページ",
+  "button": {
+    "next": "Next",
+    "back": "Back",
+    "add": "Add",
+    "save": "Save",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "change": "Change"
+  }
+}

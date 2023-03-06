@@ -9,12 +9,12 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import Iconify from '~/components/iconify';
 
-export default function SignInForm() {
+const SignInForm: FC = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
 
   return (
@@ -57,4 +57,6 @@ export default function SignInForm() {
       </LoadingButton>
     </Container>
   );
-}
+};
+
+export default SignInForm;
