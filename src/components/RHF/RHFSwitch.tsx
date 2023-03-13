@@ -1,14 +1,10 @@
-// form
-// @mui
-import { alpha, FormControlLabel, styled,Switch } from '@mui/material';
-import { Controller,useFormContext } from 'react-hook-form';
-
-// ----------------------------------------------------------------------
+import { alpha, FormControlLabel, styled, Switch } from '@mui/material';
+import { ReactNode } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 
 interface RHFSwitchProps {
   name: string;
-
-  [key: string]: any;
+  label?: ReactNode;
 }
 
 const CustomSwitch = styled(Switch)(({ theme }) => ({

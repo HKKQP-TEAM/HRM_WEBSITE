@@ -17,7 +17,8 @@ import * as Yup from 'yup';
 
 import Iconify from '~/components/iconify';
 import { RHFSwitch, RHFTextField } from '~/components/RHF';
-import FormProvider from '~/components/RHF/FormProvider.types';
+import FormProvider from '~/components/RHF/FormProvider';
+import { useLocales } from '~/hooks';
 
 const SignInForm: FC = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
@@ -26,8 +27,9 @@ const SignInForm: FC = () => {
     password: string;
     remember: boolean;
   }
+  const { translate } = useLocales();
   const LoginSchema = Yup.object().shape({
-    username: Yup.string().required('Username is required').max(100, 'Username too Long!'),
+    username: Yup.string().required('Username is required').max(100, 'Username too long!'),
     password: Yup.string()
       .required('Password is required')
       .min(8, 'Password must be more than 8 characters'),
@@ -68,15 +70,15 @@ const SignInForm: FC = () => {
               <Stack direction='row' alignItems='center' sx={{ mb: 2 }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Typography variant='h3' gutterBottom color={'#5151E5'}>
-                    Sign In
+                    {translate('Sign In')}
                   </Typography>
                 </Box>
               </Stack>
               <Stack spacing={3}>
-                <RHFTextField name='username' label='Username' />
+                <RHFTextField name='username' label={translate('Username')} />
                 <RHFTextField
                   name='password'
-                  label='Password'
+                  label={translate('Password')}
                   type={isShowPassword ? 'text' : 'password'}
                   InputProps={{
                     endAdornment: (
@@ -99,12 +101,12 @@ const SignInForm: FC = () => {
                   name='remember'
                   label={
                     <Typography color={'grey'} variant='subtitle2'>
-                      Remember me
+                      {translate('Remember me')}
                     </Typography>
                   }
                 />
                 <Link component={RouterLink} variant='subtitle2' to='/forgot-password'>
-                  Forgot password?
+                  {translate('Forgot password?')}
                 </Link>
               </Stack>
 
@@ -115,14 +117,14 @@ const SignInForm: FC = () => {
                 variant='contained'
                 sx={{ backgroundColor: '#5151E5' }}
               >
-                <Typography variant='subtitle1'>Sign In</Typography>
+                <Typography variant='subtitle1'>{translate('Sign In')}</Typography>
               </LoadingButton>
             </FormProvider>
           </Grid>
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' }, pl: 2 }}>
             <Box
               style={{
-                backgroundImage: `url(${'http://localhost:3000/assets/images/Introducing-3.png'})`,
+                backgroundImage: `url(${window.location.origin}/assets/images/Introducing-3.png)`,
                 height: '100%',
                 width: '100%',
                 backgroundRepeat: 'no-repeat',
