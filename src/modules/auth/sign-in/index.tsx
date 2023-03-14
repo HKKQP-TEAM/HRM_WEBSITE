@@ -22,18 +22,23 @@ import { useLocales } from '~/hooks';
 
 const SignInForm: FC = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
+  const { translate } = useLocales();
+
   interface Login {
     username: string;
     password: string;
     remember: boolean;
   }
-  const { translate } = useLocales();
+
   const LoginSchema = Yup.object().shape({
-    username: Yup.string().required('Username is required').max(100, 'Username too long!'),
+    username: Yup.string()
+      .required(translate('Username is required'))
+      .max(100, translate('Username too long!')),
     password: Yup.string()
-      .required('Password is required')
-      .min(8, 'Password must be more than 8 characters'),
+      .required(translate('Password is required'))
+      .min(8, translate('Password must be more than 8 characters')),
   });
+
   const defaultValues: Login = {
     username: '',
     password: '',

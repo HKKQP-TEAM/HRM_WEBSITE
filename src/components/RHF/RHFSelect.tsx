@@ -2,10 +2,6 @@ import { TextField } from '@mui/material';
 import { ReactNode } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-import { useLocales } from '~/hooks';
-
-// ----------------------------------------------------------------------
-
 interface RHFSelectProps {
   name: string;
   children: ReactNode;
@@ -13,7 +9,6 @@ interface RHFSelectProps {
 
 export default function RHFSelect({ name, children, ...other }: RHFSelectProps) {
   const { control } = useFormContext();
-  const { translate } = useLocales();
   return (
     <Controller
       name={name}
@@ -25,7 +20,7 @@ export default function RHFSelect({ name, children, ...other }: RHFSelectProps) 
           fullWidth
           SelectProps={{ native: true }}
           error={!!error}
-          helperText={translate(error?.message)}
+          helperText={error?.message}
           {...other}
         >
           {children}

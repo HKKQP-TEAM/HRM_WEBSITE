@@ -1,10 +1,6 @@
 import { TextField, TextFieldProps } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-import { useLocales } from '~/hooks';
-
-// ----------------------------------------------------------------------
-
 type RHFTextFieldProps = TextFieldProps & {
   name: string;
   label?: string;
@@ -12,7 +8,6 @@ type RHFTextFieldProps = TextFieldProps & {
 
 export default function RHFTextField({ name, label, ...other }: RHFTextFieldProps) {
   const { control } = useFormContext();
-  const { translate } = useLocales();
   return (
     <Controller
       name={name}
@@ -23,7 +18,7 @@ export default function RHFTextField({ name, label, ...other }: RHFTextFieldProp
           label={label}
           fullWidth
           error={!!error}
-          helperText={translate(error?.message)}
+          helperText={error?.message}
           {...other}
         />
       )}
