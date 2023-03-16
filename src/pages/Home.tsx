@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import { useLocales } from '~/hooks';
+import { Index } from '~/modules/home';
 
 const Home: FC = () => {
-  const { translate } = useLocales();
-  return <div>{translate('Homepage')}</div>;
+  return <Index />;
 };
 
 export default Home;

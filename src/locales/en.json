@@ -11,6 +11,11 @@
     "save": "Save",
     "confirm": "Confirm",
     "cancel": "Cancel",
-    "change": "Change"
-  }
+    "change": "Change",
+    "signIn": "Sign in",
+    "signUp": "Sign up"
+  },
+  "greetingModal": "Welcome To Our website",
+  "sayHello": "Hello everyone!",
+  "introduce": "We welcome you in Linework Ecosystem! We provide the best Web 3.0 environment to discover NFTs and get in touch with your Community in our Social Network!"
 }
