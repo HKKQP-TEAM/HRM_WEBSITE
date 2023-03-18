@@ -32,8 +32,7 @@ export function GreetingModal() {
               {translate('introduce')}
             </DialogContentText>
             <Stack spacing={2} direction='row' sx={{ mt: 2 }}>
-              <Button onClick={handleClose}>{translate('button.signIn')}</Button>
-              <Button onClick={handleClose}>{translate('button.signUp')}</Button>
+              <Button onClick={handleClose}>{translate('button.getStarted')}</Button>
             </Stack>
           </DialogContent>
         </Grid>
