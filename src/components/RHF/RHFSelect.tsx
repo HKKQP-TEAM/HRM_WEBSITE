@@ -4,10 +4,11 @@ import { Controller, useFormContext } from 'react-hook-form';
 
 interface RHFSelectProps {
   name: string;
+  label: string;
   children: ReactNode;
 }
 
-export default function RHFSelect({ name, children, ...other }: RHFSelectProps) {
+export default function RHFSelect({ name, label, children, ...other }: RHFSelectProps) {
   const { control } = useFormContext();
   return (
     <Controller
@@ -16,9 +17,9 @@ export default function RHFSelect({ name, children, ...other }: RHFSelectProps) 
       render={({ field, fieldState: { error } }) => (
         <TextField
           {...field}
+          label={label}
           select
           fullWidth
-          SelectProps={{ native: true }}
           error={!!error}
           helperText={error?.message}
           {...other}
