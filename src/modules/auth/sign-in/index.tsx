@@ -124,6 +124,16 @@ const SignInForm: FC = () => {
               >
                 <Typography variant='subtitle1'>{translate('Sign In')}</Typography>
               </LoadingButton>
+              <Stack sx={{ mt: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Link
+                  component={RouterLink}
+                  variant='subtitle1'
+                  sx={{ color: '#5151E5' }}
+                  to='/register'
+                >
+                  {translate('Creat a new account')}
+                </Link>
+              </Stack>
             </FormProvider>
           </Grid>
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' }, pl: 2 }}>

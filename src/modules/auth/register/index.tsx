@@ -6,12 +6,14 @@ import {
   Grid,
   IconButton,
   InputAdornment,
+  Link,
   MenuItem,
   Stack,
   Typography,
 } from '@mui/material';
 import { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Link as RouterLink } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import Iconify from '~/components/iconify';
@@ -22,7 +24,6 @@ import { useLocales } from '~/hooks';
 const RegisterForm: FC = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
   const { translate } = useLocales();
-
   interface Register {
     employeeId: string;
     username: string;
@@ -107,6 +108,14 @@ const RegisterForm: FC = () => {
               </Stack>
               <Stack spacing={3}>
                 <RHFTextField name='employeeId' label={translate('Employee ID')} />
+                <RHFTextField name='email' label={translate('Email')} />
+                <RHFSelect name='role' label={translate('Role')}>
+                  {role.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </RHFSelect>
                 <RHFTextField name='username' label={translate('Username')} />
                 <RHFTextField
                   name='password'
@@ -136,28 +145,32 @@ const RegisterForm: FC = () => {
                     ),
                   }}
                 />
-                <RHFTextField name='email' label={translate('Email')} />
-                <RHFSelect name='role' label={translate('Role')}>
-                  {role.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
-                <br />
               </Stack>
               <LoadingButton
                 fullWidth
                 size='large'
                 type='submit'
                 variant='contained'
-                sx={{ backgroundColor: '#5151E5' }}
+                sx={{ mt: '1.5rem', backgroundColor: '#5151E5' }}
               >
                 <Typography variant='subtitle1'>{translate('Register')}</Typography>
               </LoadingButton>
+              <Stack sx={{ mt: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Typography variant='body1'>
+                  {translate('Back to ')}
+                  <Link
+                    component={RouterLink}
+                    variant='subtitle1'
+                    sx={{ color: '#5151E5' }}
+                    to='/sign-in'
+                  >
+                    {translate('Sign In')}
+                  </Link>
+                </Typography>
+              </Stack>
             </FormProvider>
           </Grid>
-          <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' }, pl: 2 }}>
+          <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' }, pb: 3 }}>
             <Box
               style={{
                 backgroundImage: `url(${window.location.origin}/assets/images/orangescrum-signup-helps.webp)`,
