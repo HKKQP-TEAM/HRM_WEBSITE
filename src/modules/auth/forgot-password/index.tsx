@@ -17,7 +17,7 @@ const ForgotPasswordForm: FC = () => {
   }
 
   const ForgotPasswordSchema = Yup.object().shape({
-    email: Yup.string().required(translate('email is required!')),
+    email: Yup.string().required(translate('Email is required!')),
   });
 
   const defaultValues: ForgotPassword = {
