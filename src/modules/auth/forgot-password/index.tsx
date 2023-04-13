@@ -12,10 +12,8 @@ import { useLocales } from '~/hooks';
 const ForgotPasswordForm: FC = () => {
   const { translate } = useLocales();
 
-  interface Login {
-    username: string;
-    password: string;
-    remember: boolean;
+  interface ForgotPassword {
+    email: string;
   }
 
   const LoginSchema = Yup.object().shape({
@@ -27,18 +25,16 @@ const ForgotPasswordForm: FC = () => {
       .min(8, translate('Password must be more than 8 characters')),
   });
 
-  const defaultValues: Login = {
-    username: '',
-    password: '',
-    remember: false,
+  const defaultValues: ForgotPassword = {
+    email: '',
   };
 
-  const methods = useForm<Login>({
+  const methods = useForm<ForgotPassword>({
     resolver: yupResolver(LoginSchema),
     defaultValues,
   });
 
-  const onSubmit: SubmitHandler<Login> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ForgotPassword> = (data) => console.log(data);
   const { handleSubmit } = methods;
   return (
     <Box sx={{ backgroundImage: 'linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);' }}>
@@ -84,7 +80,7 @@ const ForgotPasswordForm: FC = () => {
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' }, pl: 4 }}>
             <Box
               style={{
-                backgroundImage: `url(${window.location.origin}/assets/images/Introducing-3.png)`,
+                backgroundImage: `url(${'/assets/images/Introducing-3.png'})`,
                 height: '90%',
                 width: '90%',
                 backgroundRepeat: 'no-repeat',
