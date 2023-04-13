@@ -16,13 +16,8 @@ const ForgotPasswordForm: FC = () => {
     email: string;
   }
 
-  const LoginSchema = Yup.object().shape({
-    username: Yup.string()
-      .required(translate('Username is required'))
-      .max(100, translate('Username too long!')),
-    password: Yup.string()
-      .required(translate('Password is required'))
-      .min(8, translate('Password must be more than 8 characters')),
+  const ForgotPasswordSchema = Yup.object().shape({
+    email: Yup.string().required(translate('email is required!')),
   });
 
   const defaultValues: ForgotPassword = {
@@ -30,7 +25,7 @@ const ForgotPasswordForm: FC = () => {
   };
 
   const methods = useForm<ForgotPassword>({
-    resolver: yupResolver(LoginSchema),
+    resolver: yupResolver(ForgotPasswordSchema),
     defaultValues,
   });
 
