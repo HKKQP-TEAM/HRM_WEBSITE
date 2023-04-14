@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 
+import ForgotPassword from '~/pages/ForgotPassword';
 import Register from '~/pages/Register';
 
 const Home = lazy(() => import('~/pages/Home'));
@@ -18,6 +19,10 @@ const routes: Array<RouteObject> = [
   {
     path: 'register',
     element: <Register />,
+  },
+  {
+    path: 'forgot-password',
+    element: <ForgotPassword />,
   },
 ];
 
